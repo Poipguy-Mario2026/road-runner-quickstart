@@ -12,14 +12,14 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 @TeleOp(name="TeleOp_Main")
 public class MainTeleOpMode extends LinearOpMode {
     private MecanumDrive drive;
-    public DcMotor IntakeMotor;
+   // public DcMotor IntakeMotor;
 
 
     @Override
     public void runOpMode() throws InterruptedException {
         drive = new MecanumDrive(hardwareMap, new Pose2d(0, 0, 0));
-        IntakeMotor = hardwareMap.get(DcMotor.class, "IntakeMotor");
-        IntakeMotor.setDirection(DcMotorSimple.Direction.REVERSE);
+       // IntakeMotor = hardwareMap.get(DcMotor.class, "IntakeMotor");
+       // IntakeMotor.setDirection(DcMotorSimple.Direction.REVERSE);
         waitForStart();
 
         while (opModeIsActive()) {
@@ -35,12 +35,14 @@ public class MainTeleOpMode extends LinearOpMode {
             drive.setDrivePowers(velocity);
 
             //Intake Code
-            if(gamepad1.a == true){
+           /* if(gamepad1.a == true){
                 IntakeMotor.setPower(1);
 
             } else {
                 IntakeMotor.setPower(0);
             }
+
+            */
 
 
 
